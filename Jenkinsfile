@@ -15,6 +15,7 @@ pipeline {
         }
         stage('Dependency Check') {
             steps {
+                sh 'gem install bundler-audit'
                 dependencyCheck additionalArguments: '', odcInstallation: 'depcheck521'
             }
         }
