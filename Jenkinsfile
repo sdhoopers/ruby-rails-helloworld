@@ -18,7 +18,11 @@ pipeline {
                 sh 'gem install bundler-audit'
                 sh 'bundle audit update'
                 dependencyCheck additionalArguments: '', odcInstallation: 'depcheck521'
+
+                sh "echo Listing all files after build"
+                sh "ls -ltra"
             }
         }
+
     }
 }
