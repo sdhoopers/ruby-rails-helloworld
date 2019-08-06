@@ -30,9 +30,10 @@ pipeline {
         stage('static security scan') {
             steps {
                 sh "echo Install brakeman for SAST scanning"
-                sh 'gem install brakeman'
+                sh 'gem install brakeman --no-ri --no-rdoc'
                 sh "echo Run brakeman"
-                sh 'brakeman'
+                sh 'brakeman -o brakeman-output.json --no-progress --no-exit-on-warn' 
+                publishBrakeman 'brakeman-output.json'
             }   
         }
     }
