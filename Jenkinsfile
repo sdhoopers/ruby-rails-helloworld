@@ -44,7 +44,7 @@ pipeline {
         stage('Post Deploy Smoke Test') {
             steps {
                 sh "echo Check that the deployment was successful"
-                sh "Use curl to make sure the website is still up and running"
+                sh "echo Use curl to make sure the website is still up and running"
             }
         }
     }
