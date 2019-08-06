@@ -21,6 +21,9 @@ pipeline {
 
                 sh "echo Listing all files after build"
                 sh "ls -ltra"
+                
+                sh "echo Publish results of the dependency check scan"
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
 
