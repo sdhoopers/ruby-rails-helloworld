@@ -2,7 +2,6 @@ FROM ubuntu:latest
 
 
 RUN apt-get install -y language-pack-ja-base language-pack-ja
-update-locale LANG=ja_JP.UTF-8 LANGUAGE=”ja_JP:ja”
 
 # for Java
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
