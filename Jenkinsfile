@@ -24,6 +24,8 @@ pipeline {
                 
                 sh "echo Publish results of the dependency check scan"
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+
+                archiveArtifacts allowEmptyArchive: true, artifacts: '**/dependency-check-report.xml', onlyIfSuccessful: true
             }
         }
 
