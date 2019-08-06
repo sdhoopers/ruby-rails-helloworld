@@ -8,7 +8,7 @@ RUN apt-get update && \
 
 
 # for Ruby
-RUN apt-get -y install build-essential automake git zlib1g-dev libssl-dev libreadline6-dev libyaml-dev libxml2-dev libxslt-dev libcurl4-openssl-dev libmysqlclient-dev libffi-dev \
+RUN apt-get -y install wget build-essential automake git zlib1g-dev libssl-dev libreadline6-dev libyaml-dev libxml2-dev libxslt-dev libcurl4-openssl-dev libmysqlclient-dev libffi-dev \
  && wget --no-check-certificate https://cache.ruby-lang.org/pub/ruby/2.4/ruby-2.3.0.tar.gz \
  && tar zxvf ruby-2.3.0.tar.gz \
  && cd ruby-2.3.0 \
