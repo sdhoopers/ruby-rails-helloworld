@@ -27,7 +27,7 @@ pipeline {
             }
         }
 
-        stage('static security scan') {
+        stage('Static Security Analysis') {
             steps {
                 sh "echo Install brakeman for SAST scanning"
                 sh 'gem install brakeman --no-ri --no-rdoc'
@@ -35,6 +35,17 @@ pipeline {
                 sh 'brakeman -o brakeman-output.json --no-progress --no-exit-on-warn' 
                 publishBrakeman 'brakeman-output.json'
             }   
+        }
+        stage('Deploy to Test') {
+            steps {
+                sh "echo Deploy to Test Environment"
+            }
+        }
+        stage('Post Deploy Smoke Test') {
+            steps {
+                sh "echo Check that the deployment was successful"
+                sh "Use curl to make sure the website is still up and running"
+            }
         }
     }
 }
