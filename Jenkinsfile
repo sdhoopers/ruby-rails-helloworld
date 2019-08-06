@@ -27,5 +27,13 @@ pipeline {
             }
         }
 
+        stage('static security scan') {
+            steps {
+                sh "echo Install brakeman for SAST scanning"
+                sh 'gem install brakeman'
+                sh "echo Run brakeman"
+                sh 'brakeman'
+            }   
+        }
     }
 }
