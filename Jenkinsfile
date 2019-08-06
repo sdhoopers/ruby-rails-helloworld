@@ -13,5 +13,10 @@ pipeline {
                 sh "echo JAVA_HOME: $JAVA_HOME"
             }
         }
+        stage('Dependency Check') {
+            steps {
+                dependencyCheck additionalArguments: '', odcInstallation: 'depcheck521'
+            }
+        }
     }
 }
