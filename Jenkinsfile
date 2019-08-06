@@ -36,6 +36,8 @@ pipeline {
                 sh "echo Run brakeman"
                 sh 'brakeman -o brakeman-output.json --no-progress --no-exit-on-warn' 
                 publishBrakeman 'brakeman-output.json'
+
+                archiveArtifacts allowEmptyArchive: true, artifacts: '**/brakeman-output.json', onlyIfSuccessful: true
             }   
         }
         stage('Deploy to Test') {
