@@ -1,16 +1,16 @@
 pipeline {
     agent { dockerfile true }
     stages {
-        stage('list files') {
-            steps {
-                sh 'ls -l'
-            }
-        }
-        stage('Test') {
+        stage('Setup') {
             steps {
                 sh 'java -version'
                 sh 'ruby -v'
                 sh "echo JAVA_HOME: $JAVA_HOME"
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'bundle install'
             }
         }
         stage('Dependency Check') {
