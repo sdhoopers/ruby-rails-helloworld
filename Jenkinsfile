@@ -10,6 +10,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+		sh "echo Run the bundle install"
                 sh 'bundle install'
             }
         }
