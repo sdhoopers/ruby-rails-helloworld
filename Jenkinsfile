@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
+                sh "echo Check Setup" 
                 sh 'java -version'
                 sh 'ruby -v'
                 sh "echo JAVA_HOME: $JAVA_HOME"
