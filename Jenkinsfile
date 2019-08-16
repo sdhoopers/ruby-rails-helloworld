@@ -5,7 +5,6 @@ pipeline {
             steps {
                 sh 'java -version'
                 sh 'ruby -v'
-                sh "echo JAVA_HOME: $JAVA_HOME"
             }
         }
         stage('Build') {
