@@ -9,7 +9,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'bundle install'
+                //sh 'bundle install'
+                sh "echo bundle install"
             }
         }
         stage('Dependency Check') {
